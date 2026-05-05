@@ -5,13 +5,7 @@
   "license": "MIT",
 
   "scripts": {
-    "preinstall": "sh -c 'rm -f package-lock.json yarn.lock; case \"$npm_config_user_agent\" in pnpm/*) ;; *) echo \"Use pnpm instead\" >&2; exit 1 ;; esac'",
-
-    "build": "tsc",
-    "start": "node dist/artifacts/api-server/src/index.js",
-    "dev": "ts-node artifacts/api-server/src/index.ts",
-
-    "typecheck": "tsc --noEmit"
+    "dev": "ts-node artifacts/api-server/src/index.ts"
   },
 
   "dependencies": {
