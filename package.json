@@ -5,7 +5,7 @@
   "license": "MIT",
 
   "scripts": {
-    "dev": "node --loader ts-node/esm artifacts/api-server/src/index.ts"
+    "dev": "ts-node --compiler-options '{\"module\":\"commonjs\"}' artifacts/api-server/src/index.ts"
   },
 
   "dependencies": {
