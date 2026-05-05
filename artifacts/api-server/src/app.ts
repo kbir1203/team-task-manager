@@ -13,6 +13,7 @@ import { logger } from "./lib/logger";
 
 const app: Express = express();
 
+// Logger
 app.use(
   pinoHttp({
     logger,
@@ -33,12 +34,15 @@ app.use(
   }),
 );
 
+// Clerk proxy
 app.use(CLERK_PROXY_PATH, clerkProxyMiddleware());
 
+// Middlewares
 app.use(cors({ credentials: true, origin: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Clerk auth
 app.use(
   clerkMiddleware((req) => ({
     publishableKey: publishableKeyFromHost(
@@ -48,6 +52,16 @@ app.use(
   })),
 );
 
+// 🔥 TEST ROUTES (IMPORTANT ADD)
+app.get("/", (req, res) => {
+  res.send("Backend running 🚀");
+});
+
+app.get("/api", (req, res) => {
+  res.send("API is working 🚀");
+});
+
+// Main routes
 app.use("/api", router);
 
 export default app;
