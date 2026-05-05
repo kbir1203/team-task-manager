@@ -1,0 +1,9 @@
+import { AppShell } from "./components/layout/app-shell";
+import Dashboard from "./pages/dashboard";
+import Projects from "./pages/projects/index";
+import NewProject from "./pages/projects/new";
+import Settings from "./pages/settings";
+
+// ... append to App.tsx inside <Switch>
+
+// I will rewrite App.tsx to include these imports.
