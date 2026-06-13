@@ -2,16 +2,14 @@
   "name": "workspace",
   "version": "1.0.0",
   "private": true,
+  "packageManager": "pnpm@10.26.1",
   "license": "MIT",
-
   "scripts": {
     "dev": "node -r ts-node/register artifacts/api-server/src/index.ts"
   },
-
   "dependencies": {
     "express": "^4.19.2"
   },
-
   "devDependencies": {
     "typescript": "~5.9.2",
     "ts-node": "^10.9.1",
